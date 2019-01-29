@@ -1,0 +1,27 @@
+version: "3.3"
+
+services:
+
+# NodeJS App's Container
+ app:
+  build:
+   context: ./
+  ports:
+    - 9139:8000
+  volumes:
+    - ./myapp:/code
+  tty: true
+  privileged: true
+  hostname: node_app
+
+# MongoDB container
+ mongodb:
+  build:
+   context: ./Mongodb
+  hostname: mongodb 
+  tty: true
+  privileged: true
+
+  
+
+   
